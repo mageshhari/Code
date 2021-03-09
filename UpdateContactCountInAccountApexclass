@@ -1,4 +1,4 @@
-public class ContactHandler 
+public class Contacthelper 
 {
     List<Account> accountList = new List<Account>();
     List<Account> accountListUpdated = new List<Account>();
