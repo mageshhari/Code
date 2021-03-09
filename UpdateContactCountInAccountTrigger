@@ -1,0 +1,11 @@
+trigger Count_No_Contacts on Contact (before insert, after insert, after update, after delete) {
+    ContactHandler handler = new ContactHandler();
+    if(Trigger.isAfter && Trigger.isInsert){
+        handler.countContacts(Trigger.new); }
+    
+    if(Trigger.isAfter && Trigger.isUpdate)  {
+        handler.countContacts(Trigger.new);    }
+    
+    if(Trigger.isAfter && Trigger.isDelete)    {
+        handler.countContacts(Trigger.old);    }
+}
