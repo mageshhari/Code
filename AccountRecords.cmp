@@ -1,0 +1,21 @@
+<aura:component controller="GetAccount">
+    <aura:attribute name="accounts" type="Account[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.show}"/>
+     <lightning:card title="Account Details">
+    <div class="Datatable">
+        <table>
+            <tr>
+        <td>Name</td><td>Industry</td>
+            <td>Phone</td>
+        </tr>
+    <aura:iteration items="{!v.accounts}" var="a">
+        <tr>
+       <td>{!a.Name}</td><td>{!a.Industry}</td>
+            <td>{!a.Phone}</td>
+        </tr>
+    
+    </aura:iteration>
+            </table>
+        </div>
+    </lightning:card>	
+</aura:component>

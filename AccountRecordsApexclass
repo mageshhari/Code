@@ -1,0 +1,9 @@
+public class GetAccount {
+    @AuraEnabled
+    public static List<Account> getdata(){
+        List<Account> accounts =[Select id,Name,Phone,Industry from Account order by createdDate DESC limit 10];
+            
+        return accounts;
+    }
+
+}

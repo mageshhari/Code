@@ -1,0 +1,17 @@
+({
+	show : function(component, event, helper) {
+        var action=component.get("c.getdata");
+        action.setCallback(this, function(response){
+            var state = response.getState();
+            var result = JSON.stringify(response.getReturnValue());
+            if(state==='SUCCESS' ){
+                
+                component.set("v.accounts",response.getReturnValue());
+            }else{
+                console.log('Error');
+            }
+        });
+        $A.enqueueAction(action);
+		
+	}
+})
